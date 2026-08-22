@@ -623,7 +623,7 @@ button {
 .standalone-detail .detail-visual {
   position: sticky;
   top: 58px;
-  height: calc(100vh - 58px);
+  height: calc(100dvh - 116px);
   border-right: 1px solid var(--line);
 }
 
@@ -634,6 +634,13 @@ button {
 
 .standalone-detail .detail-title h2 {
   font-size: clamp(52px, 5vw, 86px);
+}
+
+@media (min-width: 761px) {
+  .detail-visual img {
+    max-width: 94%;
+    max-height: 94%;
+  }
 }
 
 @media (max-width: 1050px) {
