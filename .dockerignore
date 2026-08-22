@@ -1,0 +1,12 @@
+.git
+.gitignore
+.DS_Store
+.generated
+docs
+materials
+site/node_modules
+site/.next
+site/dist
+site/.wrangler
+**/.DS_Store
+

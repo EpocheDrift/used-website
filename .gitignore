@@ -1,0 +1,9 @@
+.DS_Store
+.generated/
+node_modules/
+site/.next/
+site/dist/
+site/.wrangler/
+.env
+.env.*
+!.env.example

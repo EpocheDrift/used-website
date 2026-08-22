@@ -1,0 +1,15 @@
+name: used-website
+
+services:
+  used-website:
+    build:
+      context: .
+    image: used-website:latest
+    container_name: used-website
+    restart: unless-stopped
+    networks:
+      - app_net
+
+networks:
+  app_net:
+    external: true
