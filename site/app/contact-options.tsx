@@ -41,10 +41,12 @@ export function ContactOptions({ compact = false }: { compact?: boolean }) {
           target="_blank"
           rel="noreferrer"
         >
-          Instagram ↗
+          Instagram{' '}
+          <span className="view-arrow" aria-hidden="true">
+            ↗︎
+          </span>
         </a>
       </div>
     </div>
   );
 }
-
