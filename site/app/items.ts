@@ -110,7 +110,7 @@ export const items: Item[] = [
     name: 'Gaming Chair',
     kicker: 'Black · magenta',
     price: 'Free',
-    status: 'available',
+    status: 'reserved',
     image: '/items/gaming-chair.png',
     imageAlt: 'Black and magenta gaming chair with cushions',
     description:
@@ -147,7 +147,7 @@ export const items: Item[] = [
     name: 'Desk Lamp',
     kicker: 'LED task light',
     price: '$5',
-    status: 'available',
+    status: 'reserved',
     image: '/items/desk-lamp.png',
     imageAlt: 'Minimal black LED desk lamp',
     description:
@@ -165,7 +165,7 @@ export const items: Item[] = [
     name: 'Floor Lamp',
     kicker: 'Black reading light',
     price: '$10',
-    status: 'available',
+    status: 'reserved',
     image: '/items/floor-lamp.png',
     imageAlt: 'Tall black floor reading lamp',
     description:

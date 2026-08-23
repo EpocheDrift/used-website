@@ -67,7 +67,7 @@
 ## 05 — Gaming Chair
 
 - Slug: `gaming-chair`
-- Status: `available`
+- Status: `reserved`
 - Price: `Free`
 - Summary: Black · magenta
 - Description: A generously padded gaming chair with adjustable arms, back cushion, and headrest.
@@ -92,7 +92,7 @@
 ## 07 — Desk Lamp
 
 - Slug: `desk-lamp`
-- Status: `available`
+- Status: `reserved`
 - Price: `$5`
 - Summary: LED task light
 - Description: A slim black task lamp with a round weighted base and an adjustable light bar.
@@ -104,7 +104,7 @@
 ## 08 — Floor Lamp
 
 - Slug: `floor-lamp`
-- Status: `available`
+- Status: `reserved`
 - Price: `$10`
 - Summary: Black reading light
 - Description: A tall, understated floor lamp with a flexible neck and a focused reading light.
