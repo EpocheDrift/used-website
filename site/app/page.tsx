@@ -1,14 +1,60 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { items, statusLabels } from './items';
+import { items, statusLabels, type Item } from './items';
 import { ContactOptions } from './contact-options';
 import { ItemDetailBody } from './item-detail';
+
+const currentItems = items.filter((item) => item.status !== 'sold');
+const soldItems = items.filter((item) => item.status === 'sold');
 
 function itemFromPath() {
   if (typeof window === 'undefined') return null;
   const match = window.location.pathname.match(/^\/items\/([^/]+)\/?$/);
   return match ? decodeURIComponent(match[1]) : null;
+}
+
+function ItemCard({
+  item,
+  selectedSlug,
+  onOpen,
+}: {
+  item: Item;
+  selectedSlug: string | null;
+  onOpen: (slug: string) => void;
+}) {
+  return (
+    <article className={`item ${item.layout} item--${item.status}`}>
+      <button
+        className="item-trigger"
+        type="button"
+        onClick={() => onOpen(item.slug)}
+        aria-expanded={selectedSlug === item.slug}
+        aria-controls="item-detail"
+      >
+        <span className="item-image">
+          <img src={item.image} alt={item.imageAlt} />
+          <span className="view-cue">
+            View details{' '}
+            <span className="view-arrow" aria-hidden="true">
+              ↗︎
+            </span>
+          </span>
+        </span>
+        <span className="item-caption">
+          <span>{item.id}</span>
+          <span className="item-name">
+            <strong>{item.name}</strong>
+            <small>{item.kicker}</small>
+          </span>
+          <span className="item-price">{item.price}</span>
+          <span className="item-status">
+            <i aria-hidden="true" /> {statusLabels[item.status]}
+          </span>
+        </span>
+      </button>
+    </article>
+  );
 }
 
 export default function Home() {
@@ -85,6 +131,34 @@ export default function Home() {
                 </div>
               </dl>
             </div>
+            <details className="quick-index">
+              <summary>
+                <span>Active item index</span>
+                <span>{currentItems.length} active items</span>
+                <span className="quick-index-action" aria-hidden="true">
+                  <span>Browse +</span>
+                  <span>Close −</span>
+                </span>
+              </summary>
+              <nav className="quick-index-list" aria-label="Active item index">
+                {currentItems.map((item) => (
+                  <button
+                    className="quick-index-item"
+                    type="button"
+                    key={item.id}
+                    onClick={() => openItem(item.slug)}
+                    aria-label={`View ${item.name} details`}
+                  >
+                    <span>{item.id}</span>
+                    <span>{item.name}</span>
+                    <span>{item.price}</span>
+                    <span className={`quick-index-status status--${item.status}`}>
+                      <i aria-hidden="true" /> {statusLabels[item.status]}
+                    </span>
+                  </button>
+                ))}
+              </nav>
+            </details>
           </section>
 
           <section
@@ -94,47 +168,46 @@ export default function Home() {
           >
             <div className="collection-heading">
               <p>Current collection</p>
-              <p>{items.length} objects</p>
+              <p>{currentItems.length} current objects</p>
               <p>Select an item to view details</p>
             </div>
 
             <div className="item-grid">
-              {items.map((item) => (
-                <article
-                  className={`item ${item.layout} item--${item.status}`}
+              {currentItems.map((item) => (
+                <ItemCard
                   key={item.id}
-                >
-                  <button
-                    className="item-trigger"
-                    type="button"
-                    onClick={() => openItem(item.slug)}
-                    aria-expanded={selectedSlug === item.slug}
-                    aria-controls="item-detail"
-                  >
-                    <span className="item-image">
-                      <img src={item.image} alt={item.imageAlt} />
-                      <span className="view-cue">
-                        View details{' '}
-                        <span className="view-arrow" aria-hidden="true">
-                          ↗︎
-                        </span>
-                      </span>
-                    </span>
-                    <span className="item-caption">
-                      <span>{item.id}</span>
-                      <span className="item-name">
-                        <strong>{item.name}</strong>
-                        <small>{item.kicker}</small>
-                      </span>
-                      <span className="item-price">{item.price}</span>
-                      <span className="item-status">
-                        <i aria-hidden="true" /> {statusLabels[item.status]}
-                      </span>
-                    </span>
-                  </button>
-                </article>
+                  item={item}
+                  selectedSlug={selectedSlug}
+                  onOpen={openItem}
+                />
               ))}
             </div>
+
+            {soldItems.length > 0 && (
+              <details className="sold-archive">
+                <summary>
+                  <span>Sold archive</span>
+                  <span>
+                    {soldItems.length} sold{' '}
+                    {soldItems.length === 1 ? 'object' : 'objects'}
+                  </span>
+                  <span className="sold-archive-action" aria-hidden="true">
+                    <span>View archive +</span>
+                    <span>Close archive −</span>
+                  </span>
+                </summary>
+                <div className="item-grid sold-grid">
+                  {soldItems.map((item) => (
+                    <ItemCard
+                      key={item.id}
+                      item={item}
+                      selectedSlug={selectedSlug}
+                      onOpen={openItem}
+                    />
+                  ))}
+                </div>
+              </details>
+            )}
           </section>
 
           <footer className="site-footer">
