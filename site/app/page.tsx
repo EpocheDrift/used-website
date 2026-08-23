@@ -128,26 +128,44 @@ function ActiveItemIndex({
           <span>Close index −</span>
         </span>
       </summary>
-      <nav className="active-index-list" aria-label="Active item index">
-        {currentItems.map((item) => (
-          <button
-            className="active-index-item"
-            type="button"
-            key={item.id}
-            data-scroll-anchor
-            onClick={(event) => onOpen(item.slug, event.currentTarget)}
-            aria-label={`View ${item.name} details`}
-          >
-            <span>{item.id}</span>
-            <span>{item.name}</span>
-            <span>{item.price}</span>
-            <span className={`active-index-status status--${item.status}`}>
-              <i aria-hidden="true" /> {statusLabels[item.status]}
-            </span>
-          </button>
-        ))}
-      </nav>
+      {isCollectionIndex ? (
+        <nav className="active-index-list" aria-label="Active item index">
+          {currentItems.map((item) => (
+            <button
+              className="active-index-item"
+              type="button"
+              key={item.id}
+              data-scroll-anchor
+              onClick={(event) => onOpen(item.slug, event.currentTarget)}
+              aria-label={`View ${item.name} details`}
+            >
+              <ActiveIndexRow item={item} />
+            </button>
+          ))}
+        </nav>
+      ) : (
+        <div className="active-index-list" aria-label="Active items">
+          {currentItems.map((item) => (
+            <div className="active-index-item" key={item.id}>
+              <ActiveIndexRow item={item} />
+            </div>
+          ))}
+        </div>
+      )}
     </details>
+  );
+}
+
+function ActiveIndexRow({ item }: { item: Item }) {
+  return (
+    <>
+      <span>{item.id}</span>
+      <span>{item.name}</span>
+      <span>{item.price}</span>
+      <span className={`active-index-status status--${item.status}`}>
+        <i aria-hidden="true" /> {statusLabels[item.status]}
+      </span>
+    </>
   );
 }
 

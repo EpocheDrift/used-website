@@ -203,6 +203,10 @@ button {
   background: transparent;
   text-align: left;
   text-transform: uppercase;
+}
+
+button.active-index-item {
+  width: 100%;
   cursor: pointer;
 }
 
@@ -219,8 +223,8 @@ button {
   border-top: 1px solid var(--line);
 }
 
-.active-index-item:hover,
-.active-index-item:focus-visible {
+button.active-index-item:hover,
+button.active-index-item:focus-visible {
   background: var(--ink);
   color: var(--paper);
   outline: none;
