@@ -48,7 +48,7 @@ export const items: Item[] = [
     name: 'Dell 4K Monitor',
     kicker: '4K · 60 Hz',
     price: '$100',
-    status: 'available',
+    status: 'reserved',
     image: '/items/dell-monitor.png',
     imageAlt: 'Black Dell monitor on its original stand',
     description:
@@ -91,7 +91,7 @@ export const items: Item[] = [
     name: 'Omen Monitor',
     kicker: '2K · 165 Hz',
     price: '$150',
-    status: 'available',
+    status: 'reserved',
     image: '/items/omen-monitor.png',
     imageAlt: 'Omen gaming monitor attached to a silver monitor arm',
     description:

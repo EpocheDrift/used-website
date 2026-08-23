@@ -30,7 +30,7 @@
 ## 02 — Dell 4K Monitor
 
 - Slug: `dell-4k-monitor`
-- Status: `available`
+- Status: `reserved` (by Lancy)
 - Price: `$100`
 - Summary: 4K · 60 Hz
 - Description: A clean, practical 4K Dell display for a desk, studio, or home-office setup.
@@ -42,7 +42,7 @@
 ## 03 — Gaming PC
 
 - Slug: `rtx-3060ti-gaming-pc`
-- Status: `reserved`
+- Status: `reserved` (by Lancy)
 - Reservation note: Buyer committed; payment pending.
 - Price: `$450`
 - Summary: RTX 3060 Ti · Intel i7
@@ -55,7 +55,7 @@
 ## 04 — Omen Monitor
 
 - Slug: `omen-2k-monitor`
-- Status: `available`
+- Status: `reserved` (by Seungji)
 - Price: `$150`
 - Summary: 2K · 165 Hz
 - Description: A high-refresh Omen gaming display with a minimal floating desk mount.
@@ -67,7 +67,7 @@
 ## 05 — Gaming Chair
 
 - Slug: `gaming-chair`
-- Status: `reserved`
+- Status: `reserved` (by Lancy)
 - Price: `Free`
 - Summary: Black · magenta
 - Description: A generously padded gaming chair with adjustable arms, back cushion, and headrest.
@@ -92,7 +92,7 @@
 ## 07 — Desk Lamp
 
 - Slug: `desk-lamp`
-- Status: `reserved`
+- Status: `reserved` (by Lancy)
 - Price: `$5`
 - Summary: LED task light
 - Description: A slim black task lamp with a round weighted base and an adjustable light bar.
@@ -104,7 +104,7 @@
 ## 08 — Floor Lamp
 
 - Slug: `floor-lamp`
-- Status: `reserved`
+- Status: `reserved` (by Lancy)
 - Price: `$10`
 - Summary: Black reading light
 - Description: A tall, understated floor lamp with a flexible neck and a focused reading light.
