@@ -57,6 +57,62 @@ function ItemCard({
   );
 }
 
+function ActiveItemIndex({
+  placement,
+  onOpen,
+}: {
+  placement: 'intro' | 'collection';
+  onOpen: (slug: string) => void;
+}) {
+  const isCollectionIndex = placement === 'collection';
+
+  return (
+    <details className={`active-index active-index--${placement}`}>
+      <summary className={isCollectionIndex ? 'collection-heading' : undefined}>
+        {isCollectionIndex ? (
+          <>
+            <span>Current collection</span>
+            <span className="collection-heading-meta">
+              <span>{currentItems.length} objects</span>
+              <span className="active-index-action" aria-hidden="true">
+                <span>Index +</span>
+                <span>Close −</span>
+              </span>
+            </span>
+          </>
+        ) : (
+          <>
+            <span>Active item index</span>
+            <span>{currentItems.length} active items</span>
+            <span className="active-index-action" aria-hidden="true">
+              <span>Browse +</span>
+              <span>Close −</span>
+            </span>
+          </>
+        )}
+      </summary>
+      <nav className="active-index-list" aria-label="Active item index">
+        {currentItems.map((item) => (
+          <button
+            className="active-index-item"
+            type="button"
+            key={item.id}
+            onClick={() => onOpen(item.slug)}
+            aria-label={`View ${item.name} details`}
+          >
+            <span>{item.id}</span>
+            <span>{item.name}</span>
+            <span>{item.price}</span>
+            <span className={`active-index-status status--${item.status}`}>
+              <i aria-hidden="true" /> {statusLabels[item.status]}
+            </span>
+          </button>
+        ))}
+      </nav>
+    </details>
+  );
+}
+
 export default function Home() {
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -131,34 +187,7 @@ export default function Home() {
                 </div>
               </dl>
             </div>
-            <details className="quick-index">
-              <summary>
-                <span>Active item index</span>
-                <span>{currentItems.length} active items</span>
-                <span className="quick-index-action" aria-hidden="true">
-                  <span>Browse +</span>
-                  <span>Close −</span>
-                </span>
-              </summary>
-              <nav className="quick-index-list" aria-label="Active item index">
-                {currentItems.map((item) => (
-                  <button
-                    className="quick-index-item"
-                    type="button"
-                    key={item.id}
-                    onClick={() => openItem(item.slug)}
-                    aria-label={`View ${item.name} details`}
-                  >
-                    <span>{item.id}</span>
-                    <span>{item.name}</span>
-                    <span>{item.price}</span>
-                    <span className={`quick-index-status status--${item.status}`}>
-                      <i aria-hidden="true" /> {statusLabels[item.status]}
-                    </span>
-                  </button>
-                ))}
-              </nav>
-            </details>
+            <ActiveItemIndex placement="intro" onOpen={openItem} />
           </section>
 
           <section
@@ -166,11 +195,7 @@ export default function Home() {
             id="collection"
             aria-label="Items for sale"
           >
-            <div className="collection-heading">
-              <p>Current collection</p>
-              <p>{currentItems.length} current objects</p>
-              <p>Select an item to view details</p>
-            </div>
+            <ActiveItemIndex placement="collection" onOpen={openItem} />
 
             <div className="item-grid">
               {currentItems.map((item) => (
