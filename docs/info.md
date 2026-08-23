@@ -114,6 +114,44 @@
 - Pickup note: Tall item; check vehicle clearance before pickup.
 - Image: `Floor-Lamp.png`
 
+## 09 — Darkglass Microtubes X7
+
+- Slug: `darkglass-microtubes-x7`
+- Status: `available`
+- Price: `$200`
+- Summary: Bass preamp · distortion · crossover
+- Description: A flexible bass preamp and distortion pedal that keeps the low end compressed and solid while adding aggressive Microtubes drive to the upper range.
+- Condition: Used; please inspect and test at pickup.
+- Specs: Brand — Darkglass Electronics; Model — Microtubes X7; Type — Bass preamp · distortion; Crossover — Adjustable low-pass · high-pass
+- Included: —
+- Image: `Base Effects.png`
+
+## 10 — Soprano Saxophone
+
+- Slug: `soprano-saxophone`
+- Status: `available`
+- Price: `$250`
+- Summary: Case · two mouthpieces
+- Description: A soprano saxophone set with its fitted carrying case and two mouthpieces.
+- Condition: Used; please inspect and play-test at pickup.
+- Specs: Type — Soprano saxophone; Finish — Gold-tone; Mouthpieces — 2 included
+- Included: Padded carrying case; Two mouthpieces; Moriyasu handmade gold-tone metal mouthpiece
+- Image: `Soprano Saxophone.png`
+- Detail image: `Gold Saxophone Mouthpiece.png`
+
+## 11 — Strandberg Gig Bag
+
+- Slug: `strandberg-grey-gig-bag`
+- Status: `available`
+- Price: `$50`
+- Summary: Grey · 90 cm
+- Description: A grey Strandberg gig bag for an electric guitar, with a structured profile, front accessory pocket, and carry straps.
+- Condition: Used; please inspect at pickup.
+- Specs: Brand — Strandberg; Height — 90 cm; Color — Grey; Type — Electric guitar gig bag
+- Included: —
+- Pickup note: Please confirm the 90 cm height works for your instrument before pickup.
+- Image: `Strandberg Grey Instrument Gig Bag.png`
+
 ## Adding or removing an item
 
 - 添加：复制一个完整商品区块，分配新的唯一编号和 slug，并把原图放进 `materials/`。

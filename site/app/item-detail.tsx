@@ -28,6 +28,12 @@ export function ItemDetailBody({ item }: { item: Item }) {
             </div>
           ))}
         </dl>
+        {item.additionalImages?.map((image) => (
+          <figure className="detail-secondary-visual" key={image.image}>
+            <img src={image.image} alt={image.imageAlt} />
+            {image.caption && <figcaption>{image.caption}</figcaption>}
+          </figure>
+        ))}
         <div className="detail-notes">
           <div>
             <h3>Condition</h3>
@@ -53,4 +59,3 @@ export function ItemDetailBody({ item }: { item: Item }) {
     </div>
   );
 }
-

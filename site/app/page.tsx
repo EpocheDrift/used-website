@@ -63,8 +63,8 @@ export default function Home() {
             <h1>Moving Sale</h1>
             <div className="intro-copy">
               <p>
-                Eight furniture, electronics, and everyday objects from Zayn,
-                available locally while listed.
+                {items.length} instruments, electronics, furniture, and
+                everyday objects from Zayn, available locally while listed.
               </p>
               <dl className="availability">
                 <div>

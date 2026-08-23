@@ -14,6 +14,11 @@ export type Item = {
   condition: string;
   specs: Array<[string, string]>;
   included?: string[];
+  additionalImages?: Array<{
+    image: string;
+    imageAlt: string;
+    caption?: string;
+  }>;
   pickupNote?: string;
 };
 
@@ -181,6 +186,80 @@ export const items: Item[] = [
       ['Head', 'Flexible neck'],
     ],
     pickupNote: 'Tall item; check vehicle clearance before pickup.',
+  },
+  {
+    id: '09',
+    slug: 'darkglass-microtubes-x7',
+    name: 'Darkglass Microtubes X7',
+    kicker: 'Bass preamp · distortion · crossover',
+    price: '$200',
+    status: 'available',
+    image: '/items/bass-effects.png',
+    imageAlt: 'Darkglass Microtubes X7 bass preamp and distortion pedal',
+    layout: 'item--hero',
+    description:
+      'A flexible bass preamp and distortion pedal that keeps the low end compressed and solid while adding aggressive Microtubes drive to the upper range.',
+    condition: 'Used; please inspect and test at pickup.',
+    specs: [
+      ['Brand', 'Darkglass Electronics'],
+      ['Model', 'Microtubes X7'],
+      ['Type', 'Bass preamp · distortion'],
+      ['Crossover', 'Adjustable low-pass · high-pass'],
+    ],
+  },
+  {
+    id: '10',
+    slug: 'soprano-saxophone',
+    name: 'Soprano Saxophone',
+    kicker: 'Case · two mouthpieces',
+    price: '$250',
+    status: 'available',
+    image: '/items/soprano-saxophone.png',
+    imageAlt: 'Soprano saxophone in an open padded gig bag',
+    layout: 'item--right',
+    description:
+      'A soprano saxophone set with its fitted carrying case and two mouthpieces.',
+    condition: 'Used; please inspect and play-test at pickup.',
+    specs: [
+      ['Type', 'Soprano saxophone'],
+      ['Finish', 'Gold-tone'],
+      ['Mouthpieces', '2 included'],
+    ],
+    included: [
+      'Padded carrying case',
+      'Two mouthpieces',
+      'Moriyasu handmade gold-tone metal mouthpiece',
+    ],
+    additionalImages: [
+      {
+        image: '/items/gold-saxophone-mouthpiece.png',
+        imageAlt:
+          'Moriyasu handmade gold-tone metal soprano saxophone mouthpiece and ligature',
+        caption: 'Moriyasu handmade metal mouthpiece · included',
+      },
+    ],
+  },
+  {
+    id: '11',
+    slug: 'strandberg-grey-gig-bag',
+    name: 'Strandberg Gig Bag',
+    kicker: 'Grey · 90 cm',
+    price: '$50',
+    status: 'available',
+    image: '/items/strandberg-gig-bag.png',
+    imageAlt: 'Grey Strandberg electric guitar gig bag',
+    layout: 'item--small',
+    description:
+      'A grey Strandberg gig bag for an electric guitar, with a structured profile, front accessory pocket, and carry straps.',
+    condition: 'Used; please inspect at pickup.',
+    specs: [
+      ['Brand', 'Strandberg'],
+      ['Height', '90 cm'],
+      ['Color', 'Grey'],
+      ['Type', 'Electric guitar gig bag'],
+    ],
+    pickupNote:
+      'Please confirm the 90 cm height works for your instrument before pickup.',
   },
 ];
 

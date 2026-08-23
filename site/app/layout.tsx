@@ -16,11 +16,11 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://used.chaostudio.org'),
   title: "Zayn's Moving Sale — Bellevue",
   description:
-    'Eight furniture, electronics, and everyday objects from Zayn, available in Bellevue through August 31, 2026.',
+    'Eleven instruments, electronics, furniture, and everyday objects from Zayn, available in Bellevue through August 31, 2026.',
   openGraph: {
     title: "Zayn's Moving Sale — Bellevue",
     description:
-      'Eight objects available in Bellevue through August 31, 2026.',
+      'Eleven objects available in Bellevue through August 31, 2026.',
     type: 'website',
     url: '/',
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Zayn's Moving Sale — Bellevue",
     description:
-      'Eight objects available in Bellevue through August 31, 2026.',
+      'Eleven objects available in Bellevue through August 31, 2026.',
     images: ['/og.png'],
   },
 };

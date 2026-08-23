@@ -517,6 +517,27 @@ button {
   text-transform: uppercase;
 }
 
+.detail-secondary-visual {
+  margin: 58px 0 0;
+  background: var(--surface);
+}
+
+.detail-secondary-visual img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+}
+
+.detail-secondary-visual figcaption {
+  margin: 0;
+  padding: 9px 10px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
 .detail-notes {
   display: grid;
   gap: 24px;
