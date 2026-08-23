@@ -24,7 +24,7 @@ function ItemCard({
   onOpen: (slug: string) => void;
 }) {
   return (
-    <article className={`item ${item.layout} item--${item.status}`}>
+    <article className={`item item--${item.status}`}>
       <button
         className="item-trigger"
         type="button"
@@ -69,27 +69,14 @@ function ActiveItemIndex({
   return (
     <details className={`active-index active-index--${placement}`}>
       <summary className={isCollectionIndex ? 'collection-heading' : undefined}>
-        {isCollectionIndex ? (
-          <>
-            <span>Current collection</span>
-            <span className="collection-heading-meta">
-              <span>{currentItems.length} objects</span>
-              <span className="active-index-action" aria-hidden="true">
-                <span>Index +</span>
-                <span>Close −</span>
-              </span>
-            </span>
-          </>
-        ) : (
-          <>
-            <span>Active item index</span>
-            <span>{currentItems.length} active items</span>
-            <span className="active-index-action" aria-hidden="true">
-              <span>Browse +</span>
-              <span>Close −</span>
-            </span>
-          </>
-        )}
+        <span>{isCollectionIndex ? 'Current collection' : 'Active item index'}</span>
+        <span>
+          {currentItems.length} {isCollectionIndex ? 'objects' : 'active items'}
+        </span>
+        <span className="active-index-action" aria-hidden="true">
+          <span>View index +</span>
+          <span>Close index −</span>
+        </span>
       </summary>
       <nav className="active-index-list" aria-label="Active item index">
         {currentItems.map((item) => (
@@ -116,6 +103,9 @@ function ActiveItemIndex({
 export default function Home() {
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const detailPanelRef = useRef<HTMLElement>(null);
+  const lastTriggerRef = useRef<HTMLElement | null>(null);
+  const wasDetailOpenRef = useRef(false);
   const selectedItem = useMemo(
     () => items.find((item) => item.slug === selectedSlug) ?? null,
     [selectedSlug],
@@ -129,16 +119,33 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    if (!selectedItem) return;
+    if (!selectedItem) {
+      if (wasDetailOpenRef.current) {
+        wasDetailOpenRef.current = false;
+        window.requestAnimationFrame(() => lastTriggerRef.current?.focus());
+      }
+      return;
+    }
+
+    wasDetailOpenRef.current = true;
+    detailPanelRef.current?.scrollTo({ top: 0 });
     closeButtonRef.current?.focus();
+    const previousBodyOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
     const closeOnEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') closeItem();
     };
     window.addEventListener('keydown', closeOnEscape);
-    return () => window.removeEventListener('keydown', closeOnEscape);
+    return () => {
+      document.body.style.overflow = previousBodyOverflow;
+      window.removeEventListener('keydown', closeOnEscape);
+    };
   }, [selectedItem]);
 
   function openItem(slug: string) {
+    if (!selectedItem && document.activeElement instanceof HTMLElement) {
+      lastTriggerRef.current = document.activeElement;
+    }
     const historyMethod = selectedItem ? 'replaceState' : 'pushState';
     window.history[historyMethod]({}, '', `/items/${slug}`);
     setSelectedSlug(slug);
@@ -165,8 +172,9 @@ export default function Home() {
             <h1>Moving Sale</h1>
             <div className="intro-copy">
               <p>
-                {items.length} instruments, electronics, furniture, and
-                everyday objects from Zayn, available locally while listed.
+                {currentItems.length} current items from Zayn, including
+                instruments, electronics, furniture, and everyday objects,
+                available or reserved locally while listed.
               </p>
               <dl className="availability">
                 <div>
@@ -193,7 +201,7 @@ export default function Home() {
           <section
             className="collection"
             id="collection"
-            aria-label="Items for sale"
+            aria-label="Current and sold items"
           >
             <ActiveItemIndex placement="collection" onOpen={openItem} />
 
@@ -264,6 +272,7 @@ export default function Home() {
       <aside
         className="detail-panel"
         id="item-detail"
+        ref={detailPanelRef}
         aria-label={selectedItem ? `${selectedItem.name} details` : 'Item details'}
         aria-hidden={!selectedItem}
       >

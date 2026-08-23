@@ -2,7 +2,27 @@ import type { Item } from './items';
 import { statusLabels } from './items';
 import { ContactOptions } from './contact-options';
 
-export function ItemDetailBody({ item }: { item: Item }) {
+function pickupCopy(item: Item) {
+  if (item.status === 'sold') return 'This item has been sold.';
+
+  const itemNote = item.pickupNote ? `${item.pickupNote} ` : '';
+  const availability =
+    item.status === 'reserved'
+      ? 'This item is currently reserved. '
+      : 'Available through August 31, 2026. ';
+
+  return `${itemNote}${availability}Pickup in Bellevue Downtown, by arrangement.`;
+}
+
+export function ItemDetailBody({
+  item,
+  titleLevel = 'h2',
+}: {
+  item: Item;
+  titleLevel?: 'h1' | 'h2';
+}) {
+  const Title = titleLevel;
+
   return (
     <div className="detail-body">
       <div className="detail-visual">
@@ -11,7 +31,7 @@ export function ItemDetailBody({ item }: { item: Item }) {
       <div className="detail-copy">
         <div className="detail-title">
           <p>{item.kicker}</p>
-          <h2>{item.name}</h2>
+          <Title>{item.name}</Title>
         </div>
         <div className="detail-price-row">
           <p>{item.price}</p>
@@ -47,14 +67,10 @@ export function ItemDetailBody({ item }: { item: Item }) {
           )}
           <div>
             <h3>Pickup</h3>
-            <p>
-              {item.pickupNote ? `${item.pickupNote} ` : ''}
-              Bellevue Downtown, by arrangement. Available through August 31,
-              2026.
-            </p>
+            <p>{pickupCopy(item)}</p>
           </div>
         </div>
-        <ContactOptions />
+        {item.status !== 'sold' && <ContactOptions />}
       </div>
     </div>
   );

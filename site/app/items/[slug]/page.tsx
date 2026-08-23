@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ItemDetailBody } from '../../item-detail';
-import { items } from '../../items';
+import { items, type Item } from '../../items';
 
 type ItemPageProps = {
   params: Promise<{ slug: string }>;
@@ -10,6 +10,18 @@ type ItemPageProps = {
 
 export function generateStaticParams() {
   return items.map((item) => ({ slug: item.slug }));
+}
+
+function itemStatusCopy(item: Item) {
+  if (item.status === 'sold') return 'This item has been sold.';
+  if (item.status === 'reserved') return 'Currently reserved in Bellevue.';
+  return 'Available for pickup in Bellevue through August 31, 2026.';
+}
+
+function headerStatus(item: Item) {
+  if (item.status === 'sold') return 'Sold';
+  if (item.status === 'reserved') return 'Currently reserved';
+  return 'Available through August 31';
 }
 
 export async function generateMetadata({
@@ -20,7 +32,7 @@ export async function generateMetadata({
 
   if (!item) return {};
 
-  const description = `${item.price}. ${item.description} Available for pickup in Bellevue through August 31, 2026.`;
+  const description = `${item.price}. ${item.description} ${itemStatusCopy(item)}`;
 
   return {
     title: `${item.name} — Zayn's Moving Sale`,
@@ -54,7 +66,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
         <Link className="wordmark" href="/" aria-label="Zayn's moving sale home">
           ZAYN
         </Link>
-        <span>Available through August 31</span>
+        <span>{headerStatus(item)}</span>
         <Link href="/#collection">All items ←</Link>
       </header>
       <main className="standalone-detail">
@@ -62,7 +74,7 @@ export default async function ItemPage({ params }: ItemPageProps) {
           <span>Object {item.id}</span>
           <span>Bellevue, Washington</span>
         </div>
-        <ItemDetailBody item={item} />
+        <ItemDetailBody item={item} titleLevel="h1" />
       </main>
     </div>
   );

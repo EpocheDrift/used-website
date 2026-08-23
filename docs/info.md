@@ -22,7 +22,7 @@
 - Price: `$350`
 - Summary: Acoustic guitar · 2021
 - Description: A full-size Martin D-X2 acoustic guitar from 2021 with a warm sunburst finish.
-- Condition: Used and in good working condition. Please inspect at pickup.
+- Condition: Used and in good working condition.
 - Specs: Brand — Martin; Model — D-X2; Year — 2021; Finish — Sunburst
 - Included: Guitar stand shown in the photo
 - Image: `Martin-Guitar.PNG`
@@ -47,7 +47,7 @@
 - Price: `$450`
 - Summary: RTX 3060 Ti · Intel i7
 - Description: A complete gaming and workstation tower with generous memory and mixed solid-state and hard-drive storage.
-- Condition: Used and functional. Available to inspect and test by arrangement.
+- Condition: Used and functional.
 - Specs: GPU — NVIDIA RTX 3060 Ti; CPU — 12th-gen Intel Core i7; Memory — 32 GB DDR4; Storage — 1 TB SSD + 4 TB HDD
 - Included: Wheeled PC stand shown in the photo; DisplayPort cable; HDMI cable
 - Image: `PC.PNG`
