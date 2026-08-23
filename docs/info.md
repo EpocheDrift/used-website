@@ -18,7 +18,7 @@
 ## 01 — Martin D-X2
 
 - Slug: `martin-d-x2-guitar`
-- Status: `available`
+- Status: `sold`
 - Price: `$350`
 - Summary: Acoustic guitar · 2021
 - Description: A full-size Martin D-X2 acoustic guitar from 2021 with a warm sunburst finish.
@@ -42,7 +42,8 @@
 ## 03 — Gaming PC
 
 - Slug: `rtx-3060ti-gaming-pc`
-- Status: `available`
+- Status: `reserved`
+- Reservation note: Buyer committed; payment pending.
 - Price: `$450`
 - Summary: RTX 3060 Ti · Intel i7
 - Description: A complete gaming and workstation tower with generous memory and mixed solid-state and hard-drive storage.

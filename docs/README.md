@@ -7,7 +7,7 @@
 - [project-brief.md](./project-brief.md)：项目目标、首版范围和待确认事项
 - [content-model.md](./content-model.md)：公告和商品信息的数据结构草案
 - [deployment.md](./deployment.md)：域名、Docker 和服务器部署草案
-- [../materials/info.md](../materials/info.md)：日常维护商品内容的控制文档
+- [info.md](./info.md)：日常维护商品内容的控制文档
 
 ## 当前状态
 

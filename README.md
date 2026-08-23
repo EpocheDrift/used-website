@@ -45,4 +45,4 @@ docker compose -f compose.prod.yaml up -d --build
 
 ## Updating an item
 
-Edit `materials/info.md`, then ask Codex to “同步 info”. That document is the human-friendly source for prices, status, specifications, included accessories, images, and adding or removing items. Supported statuses are `available`, `reserved`, and `sold`.
+Edit `docs/info.md`, then ask Codex to “同步 info”. That document is the human-friendly source for prices, status, specifications, included accessories, images, and adding or removing items. Supported statuses are `available`, `reserved`, and `sold`.
