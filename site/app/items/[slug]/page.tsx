@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- Standalone detail exits use native navigation so Vinext cannot intercept them. */
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ItemDetailBody } from '../../item-detail';
 import { items, type Item } from '../../items';
@@ -63,11 +63,11 @@ export default async function ItemPage({ params }: ItemPageProps) {
   return (
     <div className="standalone-page">
       <header className="site-header">
-        <Link className="wordmark" href="/" aria-label="Zayn's moving sale home">
+        <a className="wordmark" href="/" aria-label="Zayn's moving sale home">
           ZAYN
-        </Link>
+        </a>
         <span>{headerStatus(item)}</span>
-        <Link href="/#collection">All items ←</Link>
+        <a href="/#collection">All items ←</a>
       </header>
       <main className="standalone-detail">
         <div className="standalone-label">
