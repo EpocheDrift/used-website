@@ -48,7 +48,7 @@ export const items: Item[] = [
     name: 'Dell 4K Monitor',
     kicker: '4K · 60 Hz',
     price: '$100',
-    status: 'reserved',
+    status: 'sold',
     image: '/items/dell-monitor.png',
     imageAlt: 'Black Dell monitor on its original stand',
     description:
@@ -67,7 +67,7 @@ export const items: Item[] = [
     name: 'Gaming PC',
     kicker: 'RTX 3060 Ti · Intel i7',
     price: '$450',
-    status: 'reserved',
+    status: 'sold',
     image: '/items/gaming-pc.png',
     imageAlt: 'Black custom gaming PC on a wheeled stand',
     description:
@@ -91,7 +91,7 @@ export const items: Item[] = [
     name: 'Omen Monitor',
     kicker: '2K · 165 Hz',
     price: '$150',
-    status: 'reserved',
+    status: 'sold',
     image: '/items/omen-monitor.png',
     imageAlt: 'Omen gaming monitor attached to a silver monitor arm',
     description:
@@ -147,7 +147,7 @@ export const items: Item[] = [
     name: 'Desk Lamp',
     kicker: 'LED task light',
     price: '$5',
-    status: 'reserved',
+    status: 'sold',
     image: '/items/desk-lamp.png',
     imageAlt: 'Minimal black LED desk lamp',
     description:
@@ -165,7 +165,7 @@ export const items: Item[] = [
     name: 'Floor Lamp',
     kicker: 'Black reading light',
     price: '$10',
-    status: 'reserved',
+    status: 'sold',
     image: '/items/floor-lamp.png',
     imageAlt: 'Tall black floor reading lamp',
     description:
@@ -233,7 +233,7 @@ export const items: Item[] = [
     slug: 'strandberg-grey-gig-bag',
     name: 'Strandberg Gig Bag',
     kicker: 'Grey · 90 cm',
-    price: '$50',
+    price: '$30',
     status: 'available',
     image: '/items/strandberg-gig-bag.png',
     imageAlt: 'Grey Strandberg electric guitar gig bag',

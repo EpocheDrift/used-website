@@ -30,7 +30,7 @@
 ## 02 — Dell 4K Monitor
 
 - Slug: `dell-4k-monitor`
-- Status: `reserved` (by Lancy)
+- Status: `sold` (by Lancy)
 - Price: `$100`
 - Summary: 4K · 60 Hz
 - Description: A clean, practical 4K Dell display for a desk, studio, or home-office setup.
@@ -42,7 +42,7 @@
 ## 03 — Gaming PC
 
 - Slug: `rtx-3060ti-gaming-pc`
-- Status: `reserved` (by Lancy)
+- Status: `sold` (by Lancy)
 - Reservation note: Buyer committed; payment pending.
 - Price: `$450`
 - Summary: RTX 3060 Ti · Intel i7
@@ -55,7 +55,7 @@
 ## 04 — Omen Monitor
 
 - Slug: `omen-2k-monitor`
-- Status: `reserved` (by Seungji)
+- Status: `sold` (by Seungji)
 - Price: `$150`
 - Summary: 2K · 165 Hz
 - Description: A high-refresh Omen gaming display with a minimal floating desk mount.
@@ -92,7 +92,7 @@
 ## 07 — Desk Lamp
 
 - Slug: `desk-lamp`
-- Status: `reserved` (by Lancy)
+- Status: `sold` (by Lancy)
 - Price: `$5`
 - Summary: LED task light
 - Description: A slim black task lamp with a round weighted base and an adjustable light bar.
@@ -104,7 +104,7 @@
 ## 08 — Floor Lamp
 
 - Slug: `floor-lamp`
-- Status: `reserved` (by Lancy)
+- Status: `sold` (by Lancy)
 - Price: `$10`
 - Summary: Black reading light
 - Description: A tall, understated floor lamp with a flexible neck and a focused reading light.
@@ -143,7 +143,7 @@
 
 - Slug: `strandberg-grey-gig-bag`
 - Status: `available`
-- Price: `$50`
+- Price: `$30`
 - Summary: Grey · 90 cm
 - Description: A grey Strandberg gig bag for an electric guitar, with a structured profile, front accessory pocket, and carry straps.
 - Condition: Used; please inspect at pickup.
