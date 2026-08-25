@@ -249,6 +249,31 @@ export const items: Item[] = [
     pickupNote:
       'Please confirm the 90 cm height works for your instrument before pickup.',
   },
+  {
+    id: '12',
+    slug: 'uniden-r7-radar-detector',
+    name: 'Uniden R7 Radar Detector',
+    kicker: 'Dual antenna · directional arrows',
+    price: '$250',
+    status: 'available',
+    image: '/items/uniden-r7-radar-detector.png',
+    imageAlt:
+      'Black Uniden R7 radar detector with suction mount and coiled power cable',
+    description:
+      'A Uniden R7 radar detector with front and rear antennas, directional alerts, and Ka/K/X band detection.',
+    condition: 'Used; please inspect and test at pickup.',
+    specs: [
+      ['Brand', 'Uniden'],
+      ['Model', 'R7'],
+      ['Antennas', 'Front + rear'],
+      ['Bands', 'Ka/K/X'],
+      ['Alerts', 'Directional arrows'],
+    ],
+    included: [
+      'Suction-cup windshield mount',
+      'Coiled vehicle power cable',
+    ],
+  },
 ];
 
 export const statusLabels: Record<ItemStatus, string> = {

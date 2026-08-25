@@ -152,6 +152,18 @@
 - Pickup note: Please confirm the 90 cm height works for your instrument before pickup.
 - Image: `Strandberg Grey Instrument Gig Bag.png`
 
+## 12 — Uniden R7 Radar Detector
+
+- Slug: `uniden-r7-radar-detector`
+- Status: `available`
+- Price: `$250`
+- Summary: Dual antenna · directional arrows
+- Description: A Uniden R7 radar detector with front and rear antennas, directional alerts, and Ka/K/X band detection.
+- Condition: Used; please inspect and test at pickup.
+- Specs: Brand — Uniden; Model — R7; Antennas — Front + rear; Bands — Ka/K/X; Alerts — Directional arrows
+- Included: Suction-cup windshield mount; Coiled vehicle power cable
+- Image: `radar detector.png`
+
 ## Adding or removing an item
 
 - 添加：复制一个完整商品区块，分配新的唯一编号和 slug，并把原图放进 `materials/`。
