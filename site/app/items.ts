@@ -129,7 +129,7 @@ export const items: Item[] = [
     name: 'Clothes Basket',
     kicker: 'Soft-sided storage',
     price: 'Free',
-    status: 'available',
+    status: 'reserved',
     image: '/items/clothes-basket.png',
     imageAlt: 'Taupe soft-sided clothes basket with a white liner',
     description:
@@ -184,7 +184,7 @@ export const items: Item[] = [
     name: 'Darkglass Microtubes X7',
     kicker: 'Bass preamp · distortion · crossover',
     price: '$200',
-    status: 'available',
+    status: 'reserved',
     image: '/items/bass-effects.png',
     imageAlt: 'Darkglass Microtubes X7 bass preamp and distortion pedal',
     description:
@@ -203,7 +203,7 @@ export const items: Item[] = [
     name: 'Soprano Saxophone',
     kicker: 'Case · two mouthpieces',
     price: '$250',
-    status: 'available',
+    status: 'reserved',
     image: '/items/soprano-saxophone.png',
     imageAlt: 'Soprano saxophone in an open padded gig bag',
     description:
@@ -234,7 +234,7 @@ export const items: Item[] = [
     name: 'Strandberg Gig Bag',
     kicker: 'Grey · 90 cm',
     price: '$30',
-    status: 'available',
+    status: 'reserved',
     image: '/items/strandberg-gig-bag.png',
     imageAlt: 'Grey Strandberg electric guitar gig bag',
     description:
@@ -255,7 +255,7 @@ export const items: Item[] = [
     name: 'Uniden R7 Radar Detector',
     kicker: 'Dual antenna · directional arrows',
     price: '$250',
-    status: 'available',
+    status: 'reserved',
     image: '/items/uniden-r7-radar-detector.png',
     imageAlt:
       'Black Uniden R7 radar detector with suction mount and coiled power cable',

@@ -80,7 +80,7 @@
 ## 06 — Clothes Basket
 
 - Slug: `clothes-basket`
-- Status: `available`
+- Status: `reserved`
 - Price: `Free`
 - Summary: Soft-sided storage
 - Description: A lightweight, neutral fabric basket for clothes, laundry, or everyday storage.
@@ -117,7 +117,7 @@
 ## 09 — Darkglass Microtubes X7
 
 - Slug: `darkglass-microtubes-x7`
-- Status: `available`
+- Status: `reserved`
 - Price: `$200`
 - Summary: Bass preamp · distortion · crossover
 - Description: A flexible bass preamp and distortion pedal that keeps the low end compressed and solid while adding aggressive Microtubes drive to the upper range.
@@ -129,7 +129,7 @@
 ## 10 — Soprano Saxophone
 
 - Slug: `soprano-saxophone`
-- Status: `available`
+- Status: `reserved`
 - Price: `$250`
 - Summary: Case · two mouthpieces
 - Description: A soprano saxophone set with its fitted carrying case and two mouthpieces.
@@ -142,7 +142,7 @@
 ## 11 — Strandberg Gig Bag
 
 - Slug: `strandberg-grey-gig-bag`
-- Status: `available`
+- Status: `reserved`
 - Price: `$30`
 - Summary: Grey · 90 cm
 - Description: A grey Strandberg gig bag for an electric guitar, with a structured profile, front accessory pocket, and carry straps.
@@ -155,7 +155,7 @@
 ## 12 — Uniden R7 Radar Detector
 
 - Slug: `uniden-r7-radar-detector`
-- Status: `available`
+- Status: `reserved`
 - Price: `$250`
 - Summary: Dual antenna · directional arrows
 - Description: A Uniden R7 radar detector with front and rear antennas, directional alerts, and Ka/K/X band detection.
